@@ -8,7 +8,11 @@ public class CapstoneApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CapstoneApplication.class, args);
+<<<<<<< HEAD
 		// hello test
+=======
+		//hello
+>>>>>>> branch 'main' of https://github.com/rehankhan21/SE-Capstone.git
 	}
 
 }
