@@ -34,23 +34,23 @@ public class ItemController {
 		return "Hello";
 	}
 	
-	// get all students
+	// get all items
 	
 	@GetMapping("/allitems")
-	public List<Item> getAllStudents() {
+	public List<Item> getAllItems() {
 		return itemRepo.findAll();	
 	}
 	
 	// addingg records. restapi methods is post for adding
 	@PostMapping("/additem")
-	public Item newStudent(@RequestBody Item i)
+	public Item newItem(@RequestBody Item i)
 	{
 		// .save is the jpa method for insert into
 		return itemRepo.save(i);
 	}
 	
 	@GetMapping("/item/{id}")
-	public ResponseEntity<Item> getStudentById(@PathVariable int id){
+	public ResponseEntity<Item> getItemById(@PathVariable int id){
 		// the arrow function in java is called a lambda fucntion
 		// error/expection handling
 		Item i = itemRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Item not found"));
@@ -59,15 +59,15 @@ public class ItemController {
 	
 	@GetMapping("/items/{name}")
 //	@RequestMapping(method = RequestMethod.GET)
-	public List<Item> getStudentByName(@PathVariable String name){
-		//Student s = studentRepo.findStudentByName(name);
-		//return ResponseEntity.ok(s);
+	public List<Item> getItemByName(@PathVariable String name){
+		
 			return itemRepo.findByName(name);
 		
 	}
 	
+	// update item
 	@PutMapping("/item/{id}")
-	public ResponseEntity<Item> updateStudent(@PathVariable int id, @RequestBody Item item){
+	public ResponseEntity<Item> updateItem(@PathVariable int id, @RequestBody Item item){
 		
 		Item i = itemRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Item not found"));
 		i.setName(item.getName());
@@ -81,7 +81,7 @@ public class ItemController {
 	
 	@DeleteMapping("/item/{id}")
 	// local varaible maps with path variable
-	public String deleteStudent(@PathVariable int id) {
+	public String deleteItem(@PathVariable int id) {
 		
 		itemRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Item not found"));
 		itemRepo.deleteById(id);
