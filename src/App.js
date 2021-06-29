@@ -4,6 +4,7 @@ import Home from './components/Home'
 import ListItems from './components/ListItems'
 import AddItem from './components/AddItem'
 import UpdateItem from './components/UpdateItem'
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (

@@ -70,6 +70,10 @@ class AddItem extends Component {
         return(
             <div>
             <form onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="exampleInputEmail1">Item Name</label>
+                    <input className="form-control" type="text" value={this.state.name} onChange={this.handleChange} name="name"></input>
+                </div>
             <label>Item Name</label>
             <input type="text" value={this.state.name} onChange={this.handleChange} name="name"></input>
 

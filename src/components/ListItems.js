@@ -60,16 +60,16 @@ class ListItems extends Component {
                 <div>
                     <p></p>
                 </div>
-                <div className="row">
-                    <table className="table table-striped table-bordered">
+                <div className="table-responsive">
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th scope="col">Item Id</th>
-                                <th>Item Name</th>
-                                <th>Item Price</th>
-                                <th>Item Description</th>
-                                <th>Item Category</th>
-                                <th>Item Duration</th>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Item Price</th>
+                                <th scope="col">Item Description</th>
+                                <th scope="col">Item Category</th>
+                                <th scope="col">Item Duration</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -77,7 +77,7 @@ class ListItems extends Component {
                                 this.state.items.map(
                                     item =>
                                     <tr key={item.id}>
-                                        <td>{item.id}</td>
+                                        <th scope="row">{item.id}</th>
                                         <td>{item.name}</td>
                                         <td>$ {item.price}</td>
                                         <td>{item.description}</td>
