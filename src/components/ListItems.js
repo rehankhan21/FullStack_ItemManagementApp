@@ -9,6 +9,7 @@ class ListItems extends Component {
             items: []
         }
         this.addItem=this.addItem.bind(this);
+        this.deleteItem=this.deleteItem.bind(this);
     }
 
     componentDidMount(){
@@ -23,12 +24,20 @@ class ListItems extends Component {
         this.props.history.push('/addItem')
     }
 
+    deleteItem()
+    {
+        this.props.history.push('/deleteItem')
+    }
+
     render() {
         return (
             <div>
                 <h2 className="text-center">Items List</h2>
                 <div>
                     <button className="btn btn-primary" onClick={this.addItem}>Add Item</button>
+                </div>
+                <div>
+                    <button className="btn btn-primary" onClick={this.deleteItem}>Delete Item</button>
                 </div>
                 <div>
                     <p></p>
