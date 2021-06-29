@@ -13,8 +13,9 @@ class AddItem extends Component {
 
         return(
             <div>
-                <form>
-
+                HELLO
+                <form >
+                    <input></input>
                 </form>
             </div>
         )

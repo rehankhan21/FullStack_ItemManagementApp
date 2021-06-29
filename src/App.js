@@ -11,6 +11,7 @@ function App() {
       {/* <Nav/> */}
       <Switch>
         <Route path="/" exact component={ListItems}/>
+        <Route path="/addItem" component={AddItem}/>
       </Switch>
     </div>
     </Router>
