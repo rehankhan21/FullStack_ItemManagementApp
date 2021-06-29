@@ -4,6 +4,12 @@
     height: 100vh;
 }
 
+.homeBg{
+    background-color:aliceblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .button{
     margin-top: 10px;
 }

@@ -45,21 +45,21 @@ class ListItems extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center">Items List</h2>
+        <h2 className="text-center homeBg">Items List</h2>
         <div>
-          <button className="btn btn-primary" onClick={this.addItem}>
+          {/* <button className="btn btn-primary col-1" onClick={this.addItem}>
             Add Item
           </button>
         </div>
         <div>
-          <button className="btn btn-primary" onClick={this.updateItem}>
+          <button className="btn btn-primary col-1" onClick={this.updateItem}>
             Update Item
-          </button>
+          </button> */}
         </div>
         <div>
           <p></p>
         </div>
-        <div className="table-responsive">
+        <div className="table-responsive ">
           <table className="table">
             <thead>
               <tr>
