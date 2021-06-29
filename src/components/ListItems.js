@@ -21,7 +21,6 @@ class ListItems extends Component {
   }
 
   addItem() {
-    //this.props.history.push('/add-item');
     this.props.history.push("/addItem");
   }
 

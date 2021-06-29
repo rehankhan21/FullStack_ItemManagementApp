@@ -7,10 +7,6 @@ const ITEM_API_DELETE_URL = "http://localhost:8081/api/item/";
 const ITEM_API_UPDATE_URL = "http://localhost:8081/api/item/"
 class ItemService extends Component{
 
-    // constructor(props){
-
-    // }
-
     getItems(){
         return axios.get(ITEM_API_BASE_URL);
     }

@@ -12,7 +12,6 @@ function App() {
     <Router>
     <div className="App">
       <NavBar/>
-      {/* <Nav/> */}
       <Switch>
         <Route path="/" exact component={ListItems}/>
         <Route path="/addItem" component={AddItem}/>
