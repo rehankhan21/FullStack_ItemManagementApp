@@ -1,6 +1,6 @@
 ### End User / Problem
 
-This is a fullstack Item Management site. That Utilizes a self made API that runs CRUD operations on my own MySQL database. This was made using Spring Boot and Java Persistence API. The user is able to Add an item, update an item and delete an item, as well as view all the items in a table.
+This is a fullstack Item Management site. That Utilizes a self made API and Server that runs CRUD operations on my own MySQL database. This was made using Spring Boot and Java Persistence API. The user is able to Add an item, update an item and delete an item, as well as view all the items in a table.
 
 ### Build With
 
