@@ -31,8 +31,20 @@ class DeleteItem extends Component {
         }
 
         ItemService.updateItem(this.state.id, item);
+        this.setState(
+            this.state = {
+                id: "",
+                name: "",
+                price: "",
+                description: "",
+                category: "",
+                duration: ""
+            }
+        )
 
-        this.props.history.push('/')
+        alert("Item has been updated on the table")
+
+        //this.props.history.push('/')
     }
 
     handleChange(event) {

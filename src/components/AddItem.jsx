@@ -33,9 +33,21 @@ class AddItem extends Component {
 
         ItemService.addItem(item);
         console.log(item)
-        this.props.history.push('/')
+        //this.props.history.push('/')
 
         //console.log(this.state)
+        this.setState(
+            this.state = {
+                id: "",
+                name: "",
+                price: "",
+                description: "",
+                category: "",
+                duration: ""
+            }
+        )
+
+        alert("Item has been added to the table")
     }
 
     handleChange(event) {
