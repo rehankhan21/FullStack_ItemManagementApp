@@ -6,10 +6,13 @@ class ListItems extends Component {
     {
         super(props)
         this.state={
+            id: "",
             items: []
         }
         this.addItem=this.addItem.bind(this);
         this.deleteItem=this.deleteItem.bind(this);
+        this.handleChange=this.handleChange.bind(this)
+        this.updateItem= this.updateItem.bind(this)
     }
 
     componentDidMount(){
@@ -24,9 +27,24 @@ class ListItems extends Component {
         this.props.history.push('/addItem')
     }
 
-    deleteItem()
+    deleteItem(event)
     {
-        this.props.history.push('/deleteItem')
+        //event.preventDefault();
+        console.log(this.state.id)
+        ItemService.deleteItem(this.state.id);
+    }
+
+    updateItem()
+    {
+        this.props.history.push('/updateItem')
+    }
+
+    handleChange(event)
+    {
+        const {name, value} = event.target
+        this.setState({
+            [name] : value
+        })
     }
 
     render() {
@@ -37,7 +55,7 @@ class ListItems extends Component {
                     <button className="btn btn-primary" onClick={this.addItem}>Add Item</button>
                 </div>
                 <div>
-                    <button className="btn btn-primary" onClick={this.deleteItem}>Delete Item</button>
+                    <button className="btn btn-primary" onClick={this.updateItem}>Update Item</button>
                 </div>
                 <div>
                     <p></p>
@@ -71,6 +89,14 @@ class ListItems extends Component {
                         </tbody>
                     </table>
                 </div>
+                <p></p>
+                <form onSubmit={this.deleteItem}>
+
+                    <label>Id for Item to Delete</label>
+                    <input type="text" value={this.state.id} onChange={this.handleChange} name="id"></input>
+
+                    <button type="submit">submit</button>
+                </form>
             </div>
         )
     }

@@ -6,6 +6,7 @@ class AddItem extends Component {
 
         super(props)
         this.state = {
+            id: "",
             name: "",
             price: "",
             description: "",
@@ -15,6 +16,7 @@ class AddItem extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     handleSubmit(event) {
@@ -24,13 +26,14 @@ class AddItem extends Component {
         let item = {
             name: this.state.name,
             price: this.state.price,
-            descripion: this.state.descripion,
+            description: this.state.description,
             category: this.state.category,
             duration: this.state.duration
         }
 
         ItemService.addItem(item);
         console.log(item)
+        this.props.history.push('/')
 
         //console.log(this.state)
     }
@@ -45,9 +48,27 @@ class AddItem extends Component {
 
     }
 
+    handleUpdate(event){
+
+        event.preventDefault()
+
+        let item = {
+            name: this.state.name,
+            price: this.state.price,
+            description: this.state.description,
+            category: this.state.category,
+            duration: this.state.duration
+        }
+
+        ItemService.updateItem(this.state.id, item);
+
+        this.props.history.push('/')
+    }
+
     render() {
 
         return(
+            <div>
             <form onSubmit={this.handleSubmit}>
             <label>Item Name</label>
             <input type="text" value={this.state.name} onChange={this.handleChange} name="name"></input>
@@ -66,6 +87,10 @@ class AddItem extends Component {
 
             <button type="submit">submit</button>
         </form>
+        <div><p></p></div>
+
+
+</div>
         )
     }
 }
