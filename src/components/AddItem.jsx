@@ -48,6 +48,9 @@ class AddItem extends Component {
         )
 
         alert("Item has been added to the table")
+        
+        
+        this.props.history.push('/')
     }
 
     handleChange(event) {

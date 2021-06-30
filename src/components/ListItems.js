@@ -15,6 +15,7 @@ class ListItems extends Component {
   }
 
   componentDidMount() {
+    
     ItemService.getItems().then((res) => {
       this.setState({ items: res.data });
     });
@@ -27,7 +28,8 @@ class ListItems extends Component {
   deleteItem(event) {
     //event.preventDefault();
     console.log(this.state.id);
-    ItemService.deleteItem(this.state.id);
+    ItemService.deleteItem(event.target.id);
+    window.location.reload(false);
   }
 
   updateItem() {
@@ -42,6 +44,7 @@ class ListItems extends Component {
   }
 
   render() {
+    
     return (
       <div>
         <h2 className="text-center homeBg">Items List</h2>
@@ -68,6 +71,7 @@ class ListItems extends Component {
                 <th scope="col">Item Description</th>
                 <th scope="col">Item Category</th>
                 <th scope="col">Item Duration</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -79,6 +83,7 @@ class ListItems extends Component {
                   <td>{item.description}</td>
                   <td>{item.category}</td>
                   <td>{item.duration} days</td>
+                  <td> <button type="submit" className="button btn btn-danger col-12" id={item.id} onClick={this.deleteItem}> Delete</button></td>
                 </tr>
               ))}
             </tbody>
